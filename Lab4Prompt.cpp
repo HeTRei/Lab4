@@ -4,20 +4,20 @@
 #include <iomanip>
 using namespace std;
 
-double funccalc(double x)
+double funcCalc(double x)
 {
     return pow(sin(x / 2), 3);
 }
 
 int main()
 {
-    double a, b, dx, integrl;
+    double a, b, dx, Integrl;
     int n;
 
     char restart = 'r';
-    while (restart == 'r' or restart == 'r')
+    while (restart == 'R' or restart == 'r')
     {
-        cout << "enter a: ";
+        cout << "Enter a: ";
         cin >> a;
         cout << "b: ";
         cin >> b;
@@ -25,26 +25,26 @@ int main()
         cin >> n;
         if (cin.fail() or n < 1)
         {
-            cout << "incorrect value! should be a number that is greater than or equal to 1, but not greater than 9223372036854775807. exiting the program";
+            cout << "Incorrect value! Should be a number that is greater than or equal to 1, but not greater than 9223372036854775807. Exiting the program";
             exit(1);
         }
 
         dx = (b - a) / n;
 
-        integrl = 0;
+        Integrl = 0;
 
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
         {
             double x = a + i * dx;
 
-            double f = funccalc(x);
+            double f = funcCalc(x);
 
-            integrl += f * dx;
+            Integrl += f * dx;
         }
 
-        cout << "the integral is: " << fixed << setprecision(4) << integrl << endl;
+        cout << "The integral is: " << fixed << setprecision(4) << Integrl << endl;
 
-        cout << "press r to restart, any other key to exit" << endl;
+        cout << "Press R to restart, any other key to exit" << endl;
         restart = _getch();
     }
 
